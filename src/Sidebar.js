@@ -27,11 +27,9 @@ import BrushOutlinedIcon from '@material-ui/icons/BrushOutlined';
 import AccessibilityNewOutlinedIcon from '@material-ui/icons/AccessibilityNewOutlined';
 
 
-
-
 function Sidebar() {
     const options = [
-        { link: 'Bookmarks', icon: <BookmarkBorderOutlinedIcon /> },
+        { link: 'Bookmarks', icon: <BookmarkBorderOutlinedIcon fontSiz0px /> },
         { link: 'List', icon: <ListAltOutlinedIcon /> },
         { link: 'Topic', icon: <ChatOutlinedIcon /> },
         { link: 'Moments', icon: <OfflineBoltOutlinedIcon /> },
@@ -43,28 +41,24 @@ function Sidebar() {
         { link: 'Display', icon: <BrushOutlinedIcon /> },
         { link: 'Keyboard shortcuts', icon: <AccessibilityNewOutlinedIcon /> },
     ];
-
     const [open, setOpen] = useState(false);
-
     const handleClick = (event) => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
     };
     return (
         <div className="sidebar">
-            <SidebarLink text="Home" active={true} Icon={HomeIcon} />
+            <SidebarLink text="Home" Icon={HomeIcon} />
             <SidebarLink text="Explore" Icon={SearchIcon} />
             <SidebarLink text="Notifications" Icon={NotificationsNoneIcon} />
             <SidebarLink text="Messages" Icon={MailOutlineIcon} />
             <SidebarLink text="Bookmarks" Icon={BookmarkBorderIcon} />
             <SidebarLink text="Lists" Icon={ListAltIcon} />
             <SidebarLink text="Profile" Icon={PermIdentityIcon} />
-            <SidebarLink text="More" Icon={MoreHorizIcon} />
             <Button onClick={handleClick} id="moreLinks">
-                <MoreHorizIcon />More
+                <MoreHorizIcon /> More
             </Button>
             <Button id="tweet">
                 Tweet
@@ -74,11 +68,11 @@ function Sidebar() {
                 onClose={handleClose}
                 id="long-menu"
             >
-                 {options.map((option) => (
-            <MenuItem key={option.link} onClick={handleClose}>
-              {option.icon} {option.link}
-            </MenuItem>
-          ))}
+                {options.map((option) => (
+                    <MenuItem key={option.link} onClick={handleClose}>
+                        {option.icon} {option.link}
+                    </MenuItem>
+                ))}
             </Menu>
         </div>
     );
