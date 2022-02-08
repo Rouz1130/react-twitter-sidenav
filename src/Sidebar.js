@@ -11,12 +11,12 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Search from "@material-ui/icons/Search";
-
+import { Button } from "@material-ui/core";
 
 function Sidebar() {
     return (
         <div className="sidebar">
-            <SidebarLink text="Home" Icon={HomeIcon} />
+            <SidebarLink text="Home" active={true} Icon={HomeIcon} />
             <SidebarLink text="Explore" Icon={SearchIcon} />
             <SidebarLink text="Notifications" Icon={NotificationsNoneIcon} />
             <SidebarLink text="Messages" Icon={MailOutlineIcon} />
@@ -24,7 +24,9 @@ function Sidebar() {
             <SidebarLink text="Lists" Icon={ListAltIcon} />
             <SidebarLink text="Profile" Icon={PermIdentityIcon} />
             <SidebarLink text="More" Icon={MoreHorizIcon} />
-
+            <Button id="tweet">
+                Tweet
+            </Button>
         </div>
     );
 }
